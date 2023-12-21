@@ -4,12 +4,13 @@ import bodyParser from 'body-parser';
 import userRouter from "./routes/user.route.js"
 import userRouter1 from "./routes/image.route.js"
 import dotenv from "dotenv"
+import cors from 'cors';
 dotenv.config();
 const app = express();
 const PORT = 8000 ||process.env.PORT
 const username = process.env.USER;
 const password = process.env.PASSWORD;
-
+app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}))
 app.use("/api", userRouter);

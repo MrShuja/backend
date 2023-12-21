@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const imagesSchema = new mongoose.Schema({
-
     image: {
         type: String,
     },
